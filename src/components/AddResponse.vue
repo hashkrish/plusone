@@ -18,7 +18,7 @@ const sendResponse = () => {
             <div class="card-body">
                 <div class="row justify-content-around">
                     <form @submit.prevent="sendResponse">
-                        <input
+                        <input required
                             ref="responseText"
                             row="3"
                             class="form-control rounded"
@@ -46,7 +46,7 @@ const sendResponse = () => {
     <span v-else>
         <button
             v-if="!isNewResponse"
-            class="col-2 px-5 mx-2 mt-2 btn btn-outline-success rounded-pill"
+            class="col-2 px-5 mx-2 mt-2 btn btn-outline-success rounded-pill text-center"
             @click="isNewResponse = true"
         >
             +
