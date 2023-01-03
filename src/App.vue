@@ -26,11 +26,9 @@ const updateCount = (id, updateType) => {
     }
 };
 
-
 const newResponse = (data) => {
-    responses.push({ ...data, id:id++, count: 1});
+    responses.push({ ...data, id: id++, count: 1 });
 };
-
 </script>
 
 <template>
@@ -51,9 +49,7 @@ const newResponse = (data) => {
                 />
             </div>
             <div class="d-flex justify-content-center">
-                <AddResponse
-                    @new-response="newResponse"
-                />
+                <AddResponse @new-response="newResponse" />
             </div>
         </div>
     </main>
@@ -63,7 +59,6 @@ const newResponse = (data) => {
 header {
     line-height: 1.5;
 }
-
 
 /* @media (min-width: 1024px) { */
 /*     header { */

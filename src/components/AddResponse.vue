@@ -14,7 +14,7 @@ const sendResponse = () => {
 
 <template>
     <span v-if="isNewResponse">
-        <div class="card" style="width: 18rem">
+        <div class="card">
             <div class="card-body">
                 <div class="row justify-content-around">
                     <form @submit.prevent="sendResponse">

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, } from "vue";
+import { ref, onMounted } from "vue";
 
 const props = defineProps({
     responseText: {
@@ -17,12 +17,10 @@ const props = defineProps({
     id: {
         type: String,
         default: "NoID",
-    }
+    },
 });
 
-const emits = defineEmits([
-    "updateCount"
-]);
+const emits = defineEmits(["updateCount"]);
 
 const selectedButtonClass = ref("round-btn btn btn-outline-success");
 function inverseSelection() {
@@ -33,29 +31,31 @@ function inverseSelection() {
         selectedButtonClass.value = "round-btn btn btn-outline-success";
         emits("updateCount", props.id, "dec");
     }
-};
+}
 
 </script>
 
 <template>
-<div class="card" style="width: 18rem">
-    <div class="card-body">
-        <p class="card-title"> {{ responseText }} </p>
-        <div class="row justify-content-around">
-            <span class="col"> {{ count }} <br/>people</span>
-            <a role="button"
-                data-bs-toggle="button"
-                @click="inverseSelection"
-                :class="selectedButtonClass"
-            >
-                +1
-            </a>
-        </div>
-        <div class="row justify-content-around debug">
-            <span class="col"> Id: {{ id }} </span>
+    <div class="card">
+        <div class="card-body">
+            <h6 ref="titleText" class="card-title">{{ responseText }}</h6>
+            <hr />
+            <div class="row justify-content-around">
+                <span class="col"> {{ count }} <br />people</span>
+                <a
+                    role="button"
+                    data-bs-toggle="button"
+                    @click="inverseSelection"
+                    :class="selectedButtonClass"
+                >
+                    +1
+                </a>
+            </div>
+            <div class="row justify-content-around debug d-none">
+                <span class="col"> Id: {{ id }} </span>
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <style scoped>
