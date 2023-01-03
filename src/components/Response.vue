@@ -1,5 +1,5 @@
 <script setup>
-import { ref, toRef, toRefs } from "vue";
+import { ref, } from "vue";
 
 const props = defineProps({
     responseText: {
@@ -21,12 +21,10 @@ const props = defineProps({
 });
 
 const emits = defineEmits([
-    "incrementCount",
-    "decrementCount"
+    "updateCount"
 ]);
 
 const selectedButtonClass = ref("round-btn btn btn-outline-success");
-const countProp = toRef("");
 function inverseSelection() {
     if (selectedButtonClass.value === "round-btn btn btn-outline-success") {
         selectedButtonClass.value = "round-btn btn btn-success";
